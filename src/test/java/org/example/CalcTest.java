@@ -41,7 +41,7 @@ class CalcTest {
     @RepeatedTest(10)
     @DisplayName("Проверка суммирования 2")
     @Timeout(10)
-
+    @Tag("summ")
     void summ2() {
         Calc calc = new Calc();
         int result = calc.summ(1, 6);
@@ -52,6 +52,7 @@ class CalcTest {
     @CsvSource({"1, 2, 3", "-1, 2, 1", "0, 0, 0"})
     @DisplayName("Проверка суммирования 3")
     @Tag("param")
+    @Tag("summ")
     void summ3(int a, int b, int expectedResult) {
         Calc calc = new Calc();
         int result = calc.summ(a, b);
@@ -71,6 +72,7 @@ class CalcTest {
 
     @Test
     @DisplayName("Проверка вычитания")
+    @Tag("subt")
     void subt1() {
         Calc calc = new Calc();
         int result = calc.subt(1, 6);
