@@ -7,6 +7,6 @@ import org.junit.platform.suite.api.Suite;
 
 @Suite
 @SelectPackages("org.example")
-@ExcludeTags("param")
+@IncludeTags("param")
 public class TestSuite {
 }

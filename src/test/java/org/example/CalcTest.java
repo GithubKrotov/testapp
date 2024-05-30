@@ -71,9 +71,20 @@ class CalcTest {
 
     @Test
     @DisplayName("Проверка вычетания")
-    void subt() {
+    void subt1() {
         Calc calc = new Calc();
         int result = calc.subt(1, 6);
         Assertions.assertEquals(-5, result, "Не тот ответ");
+    }
+
+    @ParameterizedTest(name = "#{index} - вычетание {0} и {1}, ожидаем {2}")
+    @CsvSource({"1, 1, 0", "-1, -2, 1"})
+    @DisplayName("Проверка вычетания 2")
+    @Tag("param")
+    @Tag("subt")
+        void subt2(int c, int d, int expectedResult) {
+            Calc calc = new Calc();
+            int result = calc.subt(c, d);
+            Assertions.assertEquals(expectedResult, result, "Не тот ответ");
     }
 }
