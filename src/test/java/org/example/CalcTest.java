@@ -56,7 +56,17 @@ class CalcTest {
         Calc calc = new Calc();
         int result = calc.summ(a, b);
         Assertions.assertEquals(expectedResult, result,"Не тот ответ");
+    }
 
+    @ParameterizedTest(name = "Тесты на проверку падения")
+    @CsvSource({"1, 2, 4", "-1, -2, 5"})
+    @DisplayName("Проверка суммирования 4")
+    @Tag("param")
+    @Tag("summ")
+    void summ4(int a, int b, int expectedResult) {
+        Calc calc = new Calc();
+        int result = calc.summ(a, b);
+        Assertions.assertEquals(expectedResult, result, "Не тот ответ");
     }
 
     @Test
